@@ -70,5 +70,6 @@ while t < T_FINAL:
 plt.plot(ts, ys, color='red', marker='o', linewidth=0.0, label='RK4')
 plt.plot(ts, ys_euler, color='green', marker='o', linewidth=0.0, label='Euler')
 plt.plot(ts_exact, ys_exact, color='blue', label='Exact')
+plt.title("Comparing Differential Equation Iterative Methods")
 plt.legend()
 plt.show()
