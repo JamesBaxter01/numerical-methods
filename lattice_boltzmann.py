@@ -10,8 +10,8 @@ def main():
     # Discretising domain
     Nx = 400
     Ny = 100
-    tau = 0.5
-    Nt = 5000
+    tau = 0.53
+    Nt = 4000
 
     # Lattice speeds and weights
     NL = 9
@@ -29,7 +29,7 @@ def main():
 
     for y in range(0, Ny):
         for x in range(0, Nx):
-            if(distance(Nx//4, Ny//2, x, y)<13):
+            if(distance(Nx//4, Ny//2, x, y)<16):
                 cylinder[y][x] = True
     
     # Main loop
