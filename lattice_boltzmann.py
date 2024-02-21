@@ -29,7 +29,7 @@ def main():
 
     for y in range(0, Ny):
         for x in range(0, Nx):
-            if(distance(Nx//4, Ny//2, x, y)<16):
+            if(distance(Nx//4, Ny//2, x, y)<13):
                 cylinder[y][x] = True
     
     # Main loop
