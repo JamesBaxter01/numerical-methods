@@ -46,13 +46,13 @@ x = np.linspace(0, DOMAIN_LENGTH, NODES)
 y = np.linspace(0, DOMAIN_LENGTH, NODES)
 X, Y = np.meshgrid(x, y)
 
-dt = 0.01                      # Time step size
+dt = 0.001                      # Time step size
 LID_VELOCITY = 1.0             
-µ = 0.01                       # Dynamic Viscosity
+µ = 0.005                       # Dynamic Viscosity
 rho = 1.0                      # Density
-nt = 1000                      # Number of Time Steps
+nt = 10000                      # Number of Time Steps
 T_FINAL = nt*dt
-P_ITERATIONS = 5               # Iterations used to solve Pressure Poisson equation, Ideally more than 5
+P_ITERATIONS = 50              # Iterations used to solve Pressure Poisson equation, Ideally more than 5
 
 def main():
     
@@ -126,14 +126,8 @@ def main():
 
     u_mid = u[21,:]
 
-    plt.plot(x, u_mid)
-    plt.grid()
-    plt.xlabel('X')
-    plt.ylabel('u velovicty (m/s)')
-    plt.title('Reynolds Number = ' + str(Reynolds_Number[0]) + ' at T = ' + str(T_FINAL) + 's')
-    plt.show()
     
-"""
+
     # Plotting Solution
     fig = plt.figure(figsize=(11,7), dpi=100)
     plt.contourf(X, Y, (np.sqrt(u**2 + v**2)), cmap='rainbow', levels=16)  
@@ -141,9 +135,16 @@ def main():
     plt.xlabel('X')
     plt.ylabel('Y')
     plt.title('Reynolds Number = ' + str(Reynolds_Number[0]) + ' at T = ' + str(T_FINAL) + 's')
-    plt.streamplot(X, Y, u, v)
+    #plt.streamplot(X, Y, u, v)
+
+
+    #plt.plot(x, u_mid)
+    #plt.grid()
+    #plt.xlabel('X')
+    #plt.ylabel('u velovicty (m/s)')
+    #plt.title('Reynolds Number = ' + str(Reynolds_Number[0]) + ' at T = ' + str(T_FINAL) + 's')
     plt.show()
-"""
+
 
     
 
